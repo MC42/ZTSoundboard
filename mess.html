@@ -12,18 +12,32 @@
     margin: 4px 2px;
     cursor: pointer;
 border-radius: 3px;
-align:center;
+width:10em;
+
 }
+
+.button17 {
+background: red; /* For browsers that do not support gradients */
+  /* For Safari 5.1 to 6.0 */
+  background: -webkit-linear-gradient(left,red,orange,yellow,green,blue,indigo,violet);
+  /* For Opera 11.1 to 12.0 */
+  background: -o-linear-gradient(left,red,orange,yellow,green,blue,indigo,violet);
+  /* For Fx 3.6 to 15 */
+  background: -moz-linear-gradient(left,red,orange,yellow,green,blue,indigo,violet);
+  /* Standard syntax */
+  background: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet)
+}
+
 </style>
 
 <script>
 function pressDaButton(i) {
-    return 0;
+    alert("button " + i);
 }
 </script>
 <body>
 <table>
-<tr>
+<tr align="center">
 <td><input type="button" onclick="pressDaButton(1)" class="button" value="Button 1"></td>
 <td><input type="button" onclick="pressDaButton(2)" class="button" value="Button 2"></td>
 <td><input type="button" onclick="pressDaButton(3)" class="button" value="Button 3"></td>
@@ -32,7 +46,7 @@ function pressDaButton(i) {
 <td><input type="button" onclick="pressDaButton(6)" class="button" value="Button 6"></td>
 <td><input type="button" onclick="pressDaButton(7)" class="button" value="Button 7"></td>
 </tr>
-<tr>
+<tr align="center">
 <td><input type="button" onclick="pressDaButton(8)" class="button" value="Button 8"></td>
 <td><input type="button" onclick="pressDaButton(9)" class="button" value="Button 9"></td>
 <td><input type="button" onclick="pressDaButton(10)" class="button" value="Button 10"></td>
@@ -41,16 +55,16 @@ function pressDaButton(i) {
 <td><input type="button" onclick="pressDaButton(13)" class="button" value="Button 13"></td>
 <td><input type="button" onclick="pressDaButton(14)" class="button" value="Button 14"></td>
 </tr>
-<tr>    
+<tr align="center">    
 <td><input type="button" onclick="pressDaButton(15)" class="button" value="Button 15"></td>
 <td><input type="button" onclick="pressDaButton(16)" class="button" value="Button 16"></td>
-<td><input type="button" onclick="pressDaButton(17)" class="button" value="Button 17"></td>
+<td><input type="button" onclick="pressDaButton(17)" class="button button17" value="Button 17"></td>
 <td><input type="button" onclick="pressDaButton(18)" class="button" value="Button 18"></td>
 <td><input type="button" onclick="pressDaButton(19)" class="button" value="Button 19"></td>
 <td><input type="button" onclick="pressDaButton(20)" class="button" value="Button 20"></td>
 <td><input type="button" onclick="pressDaButton(21)" class="button" value="Button 21"></td>
 </tr>
-<tr>
+<tr align="center">
 <td><input type="button" onclick="pressDaButton(22)" class="button" value="Button 22"></td>
 <td><input type="button" onclick="pressDaButton(23)" class="button" value="Button 23"></td>
 <td><input type="button" onclick="pressDaButton(24)" class="button" value="Button 24"></td>
