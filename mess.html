@@ -32,9 +32,23 @@ background: #4CAF50; /* For browsers that do not support gradients */
 </style>
 
 <script>
+
+
 function pressDaButton(i) {
+
+    
     test = document.getElementById("b" + i).style="background:#FFF000 !important";
     console.log("Button " + i + " pressed at " + new Date().getTime())
+    playSound(i);
+
+
+}
+
+function playSound(i) {
+    var audio = new Audio();
+	if (i == 17) {
+		audio = new Audio('sounds/b17.mp3').play();
+	}
 }
 </script>
 <body>
