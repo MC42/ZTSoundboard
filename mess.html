@@ -4,7 +4,7 @@ background-color:rgb(50,50,50);
 }
 
 tr {
-align="center";
+align="center";overflow: auto;
 }
 
 .button {
@@ -31,8 +31,51 @@ background: #4CAF50; /* For browsers that do not support gradients */
 
 </style>
 
+
+<body>
+<table id = "test">
+<tr>
+<td><input id="b1" type="button" onclick="pressDaButton(1)" class="button" value="Button 1"></td>
+<td><input id="b2" type="button" onclick="pressDaButton(2)" class="button" value="Button 2"></td>
+<td><input id="b3" type="button" onclick="pressDaButton(3)" class="button" value="Button 3"></td>
+<td><input id="b4" type="button" onclick="pressDaButton(4)" class="button" value="Button 4"></td>
+<td><input id="b5" type="button" onclick="pressDaButton(5)" class="button" value="Button 5"></td>
+<td><input id="b6" type="button" onclick="pressDaButton(6)" class="button" value="Button 6"></td>
+<td><input id="b7" type="button" onclick="pressDaButton(7)" class="button" value="Button 7"></td>
+</tr>
+<tr>
+<td><input id="b8" type="button" onclick="pressDaButton(8)" class="button" value="Button 8"></td>
+<td><input id="b9" type="button" onclick="pressDaButton(9)" class="button" value="Button 9"></td>
+<td><input id="b10" type="button" onclick="pressDaButton(10)" class="button" value="Body Is Reggie"></td>
+<td><input id="b11" type="button" onclick="pressDaButton(11)" class="button" value="Breakers"></td>
+<td><input id="b12" type="button" onclick="pressDaButton(12)" class="button" value="Team Etc."></td>
+<td><input id="b13" type="button" onclick="pressDaButton(13)" class="button" value="Fixers"></td>
+<td><input id="b14" type="button" onclick="pressDaButton(14)" class="button" value="Game Over"></td>
+</tr>
+<tr>
+<td><input id="b15" type="button" onclick="pressDaButton(15)" class="button" value="Hey"></td>
+<td><input id="b16" type="button" onclick="pressDaButton(16)" class="button" value="Hooray Yay!"></td>
+<td><input id="b17" type="button" onclick="pressDaButton(17)" class="button button17" value="Button 17"></td>
+<td><input id="b18" type="button" onclick="pressDaButton(18)" class="button" value="Nope"></td>
+<td><input id="b19" type="button" onclick="pressDaButton(19)" class="button" value="Palindrome"></td>
+<td><input id="b20" type="button" onclick="pressDaButton(20)" class="button" value="Wow!"></td>
+<td><input id="b21" type="button" onclick="pressDaButton(21)" class="button" value="Button 21"></td>
+</tr>
+<tr>
+<td><input id="b22" type="button" onclick="pressDaButton(22)" class="button" value="Button 22"></td>
+<td><input id="b23" type="button" onclick="pressDaButton(23)" class="button" value="Button 23"></td>
+<td><input id="b24" type="button" onclick="pressDaButton(24)" class="button" value="Button 24"></td>
+<td><input id="b25" type="button" onclick="pressDaButton(25)" class="button" value="Button 25"></td>
+<td><input id="b26" type="button" onclick="pressDaButton(26)" class="button" value="Button 26"></td>
+<td><input id="b27" type="button" onclick="pressDaButton(27)" class="button" value="Button 27"></td>
+<td><input id="b28" type="button" onclick="pressDaButton(28)" class="button" value="Button 28"></td>
+</tr>
+</table>
+</body>
+
 <script>
 
+//document.getElementById("test").innerHTML + '<td><input id="b17" type="button" onclick="pressDaButton(17)" class="button button17" value="Button 17"></td>';
 
 function pressDaButton(i) {
 
@@ -49,45 +92,49 @@ function playSound(i) {
 	if (i == 17) {
 		audio = new Audio('sounds/b17.mp3').play();
 	}
+	else if (i == 10) {
+		audio = new Audio('sounds/body.mp3').play();
+	}
+	else if (i == 11) {
+		audio = new Audio('sounds/breakers.mp3').play();
+	}
+	else if (i == 12) {
+		audio = new Audio('sounds/etc.mp3').play();
+	}
+	else if (i == 13) {
+		audio = new Audio('sounds/fixers.mp3').play();
+	}
+	else if (i == 14) {
+		audio = new Audio('sounds/gameoveryeah.mp3').play();
+	}
+	else if (i == 15) {
+		audio = new Audio('sounds/hey.mp3').play();
+	}
+	else if (i == 16) {
+		audio = new Audio('sounds/hoorayyay.mp3').play();
+	}
+	else if (i == 18) {
+		audio = new Audio('sounds/Nope.mp3').play();
+	}
+	else if (i == 19) {
+		audio = new Audio('sounds/palindrome.mp3').play();
+	}
+	else if (i == 20) {
+		audio = new Audio('sounds/wow.mp3').play();
+	}
+}
+
+function genButtons() {
+	var tracker = 0;
+	for (i = 1; i < 5; i++) {
+	document.getElementById("test").innerHTML+='<tr>';
+	for (innerthing = 1; innerthing < 7; innerthing++) {
+		document.getElementById("test").innerHTML+='<td><input id="b' + (tracker + 1) + '" type="button" onclick="pressDaButton(' + (tracker+1) +')" class="button" value="Button ' + (tracker + 1)+ '"></td>';
+tracker++;	
+		}
+	tracker++;
+	document.getElementById("test").innerHTML+='</tr>';
+	}
+	
 }
 </script>
-<body>
-<table>
-<tr>
-<td><input id="b1" type="button" onclick="pressDaButton(1)" class="button" value="Button 1"></td>
-<td><input id="b2" type="button" onclick="pressDaButton(2)" class="button" value="Button 2"></td>
-<td><input id="b3" type="button" onclick="pressDaButton(3)" class="button" value="Button 3"></td>
-<td><input id="b4" type="button" onclick="pressDaButton(4)" class="button" value="Button 4"></td>
-<td><input id="b5" type="button" onclick="pressDaButton(5)" class="button" value="Button 5"></td>
-<td><input id="b6" type="button" onclick="pressDaButton(6)" class="button" value="Button 6"></td>
-<td><input id="b7" type="button" onclick="pressDaButton(7)" class="button" value="Button 7"></td>
-</tr>
-<tr>
-<td><input id="b8" type="button" onclick="pressDaButton(8)" class="button" value="Button 8"></td>
-<td><input id="b9" type="button" onclick="pressDaButton(9)" class="button" value="Button 9"></td>
-<td><input id="b10" type="button" onclick="pressDaButton(10)" class="button" value="Button 10"></td>
-<td><input id="b11" type="button" onclick="pressDaButton(11)" class="button" value="Button 11"></td>
-<td><input id="b12" type="button" onclick="pressDaButton(12)" class="button" value="Button 12"></td>
-<td><input id="b13" type="button" onclick="pressDaButton(13)" class="button" value="Button 13"></td>
-<td><input id="b14" type="button" onclick="pressDaButton(14)" class="button" value="Button 14"></td>
-</tr>
-<tr>    
-<td><input id="b15" type="button" onclick="pressDaButton(15)" class="button" value="Button 15"></td>
-<td><input id="b16" type="button" onclick="pressDaButton(16)" class="button" value="Button 16"></td>
-<td><input id="b17" type="button" onclick="pressDaButton(17)" class="button button17" value="Button 17"></td>
-<td><input id="b18" type="button" onclick="pressDaButton(18)" class="button" value="Button 18"></td>
-<td><input id="b19" type="button" onclick="pressDaButton(19)" class="button" value="Button 19"></td>
-<td><input id="b20" type="button" onclick="pressDaButton(20)" class="button" value="Button 20"></td>
-<td><input id="b21" type="button" onclick="pressDaButton(21)" class="button" value="Button 21"></td>
-</tr>
-<tr>
-<td><input id="b22" type="button" onclick="pressDaButton(22)" class="button" value="Button 22"></td>
-<td><input id="b23" type="button" onclick="pressDaButton(23)" class="button" value="Button 23"></td>
-<td><input id="b24" type="button" onclick="pressDaButton(24)" class="button" value="Button 24"></td>
-<td><input id="b25" type="button" onclick="pressDaButton(25)" class="button" value="Button 25"></td>
-<td><input id="b26" type="button" onclick="pressDaButton(26)" class="button" value="Button 26"></td>
-<td><input id="b27" type="button" onclick="pressDaButton(27)" class="button" value="Button 27"></td>
-<td><input id="b28" type="button" onclick="pressDaButton(28)" class="button" value="Button 28"></td>
-</tr>
-</table>
-</body>
