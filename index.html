@@ -33,7 +33,7 @@ background: #4CAF50; /* For browsers that do not support gradients */
 
 
 <body>
-<table id = "test">
+<table id = "buttons">
 <tr>
 <td><input id="b1" type="button" onclick="pressDaButton(1)" class="button" value="Button 1"></td>
 <td><input id="b2" type="button" onclick="pressDaButton(2)" class="button" value="Button 2"></td>
@@ -80,15 +80,31 @@ background: #4CAF50; /* For browsers that do not support gradients */
 function pressDaButton(i) {
 
     
-    test = document.getElementById("b" + i).style="background:#FFF000 !important";
+    //test = document.getElementById("b" + i).style="background:#FFF000 !important";
     console.log("Button " + i + " pressed at " + new Date().getTime())
     playSound(i);
 
 
 }
 
+
+function generateButtons() {
+	console.log('<tr>');
+	for (i = 1; i <= 28; i++) {
+		console.log('<input id="b' + i +'" type="button" onclick="pressDaButton(' + i +')" class="button" value="Button '+ i + '"></td>');
+		if ((i % 7 == 0) && (i != 28)) {
+		console.log('</tr><tr>');	
+		}
+	}
+	console.log('</tr>');
+}
+
+
+// This is for the actual selection and playing of the audio.  The Audio is initialized externally in case I ever want to fix the overlap on different sounds pressed quickly.
+var audio = new Audio();
+
 function playSound(i) {
-    var audio = new Audio();
+    //var audio = new Audio();
 	if (i == 17) {
 		audio = new Audio('sounds/b17.mp3').play();
 	}
@@ -124,17 +140,4 @@ function playSound(i) {
 	}
 }
 
-function genButtons() {
-	var tracker = 0;
-	for (i = 1; i < 5; i++) {
-	document.getElementById("test").innerHTML+='<tr>';
-	for (innerthing = 1; innerthing < 7; innerthing++) {
-		document.getElementById("test").innerHTML+='<td><input id="b' + (tracker + 1) + '" type="button" onclick="pressDaButton(' + (tracker+1) +')" class="button" value="Button ' + (tracker + 1)+ '"></td>';
-tracker++;	
-		}
-	tracker++;
-	document.getElementById("test").innerHTML+='</tr>';
-	}
-	
-}
 </script>
