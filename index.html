@@ -20,7 +20,7 @@ background-color:rgb(50,50,50);
 
 }
 
-.button17 {
+.button17:hover {
 background: #4CAF50; /* For browsers that do not support gradients */
   /* For Safari 5.1 to 6.0 */
   background: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet)
@@ -56,7 +56,7 @@ background: #4CAF50; /* For browsers that do not support gradients */
 <td><input id="b18" type="button" onclick="pressButton(18)" class="button" value="Nope"></td>
 <td><input id="b19" type="button" onclick="pressButton(19)" class="button" value="Palindrome"></td>
 <td><input id="b20" type="button" onclick="pressButton(20)" class="button" value="Wow!"></td>
-<td><input id="b21" type="button" onclick="pressButton(21)" class="button" value="Button 21"></td>
+<td><input id="b21" type="button" onclick="pressButton(21)" class="button" value="MEMES.OGG"></td>
 </tr>
 <tr>
 <td><input id="b22" type="button" onclick="pressButton(22)" class="button" value="Button 22"></td>
@@ -171,7 +171,9 @@ function playSound(i) {
 	else if (i == 9) {
 		playingaudio = new Audio('sounds/dollars/1000.mp3').play();
 	}
-
+	else if (i == 21) {
+		playingaudio = new Audio('sounds/MEMES.mp3').play();
+	}
 
 
 
