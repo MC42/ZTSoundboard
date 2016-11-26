@@ -20,8 +20,12 @@ background-color:rgb(50,50,50);
 
 }
 
+.couch {
+	background-color: red;
+}
+
 .button17:hover {
-background: #4CAF50; /* For browsers that do not support gradients */
+background: !important #4CAF50; /* For browsers that do not support gradients */
   /* For Safari 5.1 to 6.0 */
   background: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet)
 }
@@ -59,13 +63,13 @@ background: #4CAF50; /* For browsers that do not support gradients */
 <td><input id="b21" type="button" onclick="pressButton(21)" class="button" value="MEMES.OGG"></td>
 </tr>
 <tr>
-<td><input id="b22" type="button" onclick="pressButton(22)" class="button" value="Button 22"></td>
-<td><input id="b23" type="button" onclick="pressButton(23)" class="button" value="Button 23"></td>
-<td><input id="b24" type="button" onclick="pressButton(24)" class="button" value="Button 24"></td>
-<td><input id="b25" type="button" onclick="pressButton(25)" class="button" value="Button 25"></td>
-<td><input id="b26" type="button" onclick="pressButton(26)" class="button" value="Button 26"></td>
-<td><input id="b27" type="button" onclick="pressButton(27)" class="button" value="Button 27"></td>
-<td><input id="b28" type="button" onclick="pressButton(28)" class="button" value="Button 28"></td>
+<td><input id="b22" type="button" onclick="pressButton(22)" class="button couch" value="Reggienator"></td>
+<td><input id="b23" type="button" onclick="pressButton(23)" class="button couch" value="Space Tracks"></td>
+<td><input id="b24" type="button" onclick="pressButton(24)" class="button couch" value="Button 24"></td>
+<td><input id="b25" type="button" onclick="pressButton(25)" class="button couch" value="Button 25"></td>
+<td><input id="b26" type="button" onclick="pressButton(26)" class="button couch" value="Button 26"></td>
+<td><input id="b27" type="button" onclick="pressButton(27)" class="button couch" value="Button 27"></td>
+<td><input id="b28" type="button" onclick="pressButton(28)" class="button couch" value="Button 28"></td>
 </tr>
 </table>
 </body>
@@ -171,11 +175,15 @@ function playSound(i) {
 	else if (i == 9) {
 		playingaudio = new Audio('sounds/dollars/1000.mp3').play();
 	}
+	else if (i == 22) {
+		playingaudio = new Audio('sounds/couch/reggienator.mp3').play();
+	}
 	else if (i == 21) {
 		playingaudio = new Audio('sounds/MEMES.mp3').play();
 	}
-
-
+	else if (i == 23) {
+		playingaudio = new Audio('sounds/couch/spacetracks.mp3').play();
+	}
 
 
 
