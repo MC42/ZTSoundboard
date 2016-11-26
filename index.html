@@ -1,23 +1,26 @@
 <style>
+
 body {
-background-color:rgb(50,50,50);
+	background-color:rgb(50,50,50);
 }
 
-
 .button {
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 3px;
-    width:10em;
-
+	background-color: #4CAF50;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+	border-radius: 3px;
+	width:calc(calc(100% / 7) - 10px);
+}
+.wide-button {
+	width: calc(calc(100% / 1) - 16px);
+	background-color: #dac800;
 }
 
 .couch {
@@ -25,17 +28,13 @@ background-color:rgb(50,50,50);
 }
 
 .button17:hover {
-background: !important #4CAF50; /* For browsers that do not support gradients */
-  /* For Safari 5.1 to 6.0 */
-  background: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet)
+	background: !important #4CAF50; 
+	background: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet)
 }
-
 </style>
 
 
 <body>
-<table id = "buttons">
-<tr>
 <td><input id="b1" type="button" onclick="pressButton(1)" class="button" value="$1"></td>
 <td><input id="b2" type="button" onclick="pressButton(2)" class="button" value="$5"></td>
 <td><input id="b3" type="button" onclick="pressButton(3)" class="button" value="$10"></td>
@@ -43,8 +42,7 @@ background: !important #4CAF50; /* For browsers that do not support gradients */
 <td><input id="b5" type="button" onclick="pressButton(5)" class="button" value="$50"></td>
 <td><input id="b6" type="button" onclick="pressButton(6)" class="button" value="$100"></td>
 <td><input id="b7" type="button" onclick="pressButton(7)" class="button" value="$250"></td>
-</tr>
-<tr>
+
 <td><input id="b8" type="button" onclick="pressButton(8)" class="button" value="$500"></td>
 <td><input id="b9" type="button" onclick="pressButton(9)" class="button" value="$1000"></td>
 <td><input id="b10" type="button" onclick="pressButton(10)" class="button" value="Body Is Reggie"></td>
@@ -52,8 +50,7 @@ background: !important #4CAF50; /* For browsers that do not support gradients */
 <td><input id="b12" type="button" onclick="pressButton(12)" class="button" value="Team Etc."></td>
 <td><input id="b13" type="button" onclick="pressButton(13)" class="button" value="Fixers"></td>
 <td><input id="b14" type="button" onclick="pressButton(14)" class="button" value="Game Over"></td>
-</tr>
-<tr>
+
 <td><input id="b15" type="button" onclick="pressButton(15)" class="button" value="Hey"></td>
 <td><input id="b16" type="button" onclick="pressButton(16)" class="button" value="Hooray Yay!"></td>
 <td><input id="b17" type="button" onclick="pressButton(17)" class="button button17" value="Button 17"></td>
@@ -61,28 +58,24 @@ background: !important #4CAF50; /* For browsers that do not support gradients */
 <td><input id="b19" type="button" onclick="pressButton(19)" class="button" value="Palindrome"></td>
 <td><input id="b20" type="button" onclick="pressButton(20)" class="button" value="Wow!"></td>
 <td><input id="b21" type="button" onclick="pressButton(21)" class="button" value="MEMES.OGG"></td>
-</tr>
-<tr>
+
 <td><input id="b22" type="button" onclick="pressButton(22)" class="button couch" value="Reggienator"></td>
 <td><input id="b23" type="button" onclick="pressButton(23)" class="button couch" value="Space Tracks"></td>
-<td><input id="b24" type="button" onclick="pressButton(24)" class="button couch" value="Button 24"></td>
-<td><input id="b25" type="button" onclick="pressButton(25)" class="button couch" value="Button 25"></td>
-<td><input id="b26" type="button" onclick="pressButton(26)" class="button couch" value="Button 26"></td>
-<td><input id="b27" type="button" onclick="pressButton(27)" class="button couch" value="Button 27"></td>
-<td><input id="b28" type="button" onclick="pressButton(28)" class="button couch" value="Button 28"></td>
-</tr>
-</table>
+<td><input id="b24" type="button" onclick="pressButton(24)" class="button" value="That's Awesome!"></td>
+<td><input id="b25" type="button" onclick="pressButton(25)" class="button" value="Button 25"></td>
+<td><input id="b26" type="button" onclick="pressButton(26)" class="button" value="Button 26"></td>
+<td><input id="b27" type="button" onclick="pressButton(27)" class="button" value="Button 27"></td>
+<td><input id="b28" type="button" onclick="pressButton(28)" class="button" value="Button 28"></td>
+
+<input id="b0000" type="button" onclick="playingaudio.pause()" class="button wide-button" value="STOP!"></td>
 </body>
-
-
-
 <script>
 function pressButton(i) {
     t = document.getElementById("b" + i)
-    t.style="background:#FFF000 !important"; //This line turns the button yellow after being pressed.  No way to undo, so it stays unimplemented.
+    //t.style="background:#FFF000 !important"; //This line turns the button yellow after being pressed.  No way to undo, so it stays unimplemented.
     console.log( t.value + " (AKA Button " + i + ") pressed at " + new Date().getTime())
     playSound(i);
-    t.style="";
+    //t.style="";
 }
 
 //This is still highly experimental, and should not be considered GA / GP.  Will be more useful if I ever make a button object.
@@ -98,96 +91,105 @@ function generateButtons() {
 }
 
 
+
 // This is for the actual selection and playing of the audio.  The audio is initialized externally in case I ever want to fix the overlap on different sounds pressed quickly.
-
-
-
-
-
 var playingaudio = new Audio();
-
-playingaudio.addEventListener("ended", function(){
-     playingaudio.currentTime = 0;
-     console.log("ended");
-});
-
-
 
 function playSound(i) {
     //var playingaudio = new playingaudio();
-	if (i == 17) {
-		playingaudio = new Audio('sounds/b17.mp3').play();
+
+	if (i == 17) { //BUTTON 17 CAME FIRST, THEN ALL OTHERS
+		playingaudio = new Audio('sounds/b17.mp3');
+		playingaudio.play();
 	}
 	else if (i == 10) {
-		playingaudio = new Audio('sounds/body.mp3').play();
+		playingaudio = new Audio('sounds/body.mp3');
+		playingaudio.play();
 	}
 	else if (i == 11) {
-		playingaudio = new Audio('sounds/breakers.mp3').play();
+		playingaudio = new Audio('sounds/breakers.mp3');
+		playingaudio.play();
 	}
 	else if (i == 12) {
-		playingaudio = new Audio('sounds/etc.mp3').play();
+		playingaudio = new Audio('sounds/etc.mp3');
+		playingaudio.play();
 	}
 	else if (i == 13) {
-		playingaudio = new Audio('sounds/fixers.mp3').play();
+		playingaudio = new Audio('sounds/fixers.mp3');
+		playingaudio.play();
 	}
 	else if (i == 14) {
-		playingaudio = new Audio('sounds/gameoveryeah.mp3').play();
+		playingaudio = new Audio('sounds/gameoveryeah.mp3');
+		playingaudio.play();
 	}
 	else if (i == 15) {
-		playingaudio = new Audio('sounds/hey.mp3').play();
+		playingaudio = new Audio('sounds/hey.mp3');
+		playingaudio.play();
 	}
 	else if (i == 16) {
-		playingaudio = new Audio('sounds/hoorayyay.mp3').play();
+		playingaudio = new Audio('sounds/hoorayyay.mp3');
+		playingaudio.play();
 	}
 	else if (i == 18) {
-		playingaudio = new Audio('sounds/Nope.mp3').play();
+		playingaudio = new Audio('sounds/Nope.mp3');
+		playingaudio.play();
 	}
 	else if (i == 19) {
-		playingaudio = new Audio('sounds/palindrome.mp3').play();
+		playingaudio = new Audio('sounds/palindrome.mp3');
+		playingaudio.play();
 	}
 	else if (i == 20) {
-		playingaudio = new Audio('sounds/wow.mp3').play();
+		playingaudio = new Audio('sounds/wow.mp3');
+		playingaudio.play();
 	}
 	else if (i == 1) {
-		playingaudio = new Audio('sounds/dollars/1.mp3').play();
+		playingaudio = new Audio('sounds/dollars/1.mp3');
+		playingaudio.play();
 	}
 	else if (i == 2) {
-		playingaudio = new Audio('sounds/dollars/5.mp3').play();
+		playingaudio = new Audio('sounds/dollars/5.mp3');
+		playingaudio.play();
 	}
 	else if (i == 3) {
-		playingaudio = new Audio('sounds/dollars/10.mp3').play();
+		playingaudio = new Audio('sounds/dollars/10.mp3');
+		playingaudio.play();
 	}
 	else if (i == 4) {
-		playingaudio = new Audio('sounds/dollars/25.mp3').play();
+		playingaudio = new Audio('sounds/dollars/25.mp3');
+		playingaudio.play();
 	}
 	else if (i == 5) {
-		playingaudio = new Audio('sounds/dollars/50.mp3').play();
+		playingaudio = new Audio('sounds/dollars/50.mp3');
+		playingaudio.play();
 	}
 	else if (i == 6) {
-		playingaudio = new Audio('sounds/dollars/100.mp3').play();
+		playingaudio = new Audio('sounds/dollars/100.mp3');
+		playingaudio.play();
 	}
 	else if (i == 7) {
-		playingaudio = new Audio('sounds/dollars/250.mp3').play();
+		playingaudio = new Audio('sounds/dollars/250.mp3');
+		playingaudio.play();
 	}
 	else if (i == 8) {
-		playingaudio = new Audio('sounds/dollars/500.mp3').play();
+		playingaudio = new Audio('sounds/dollars/500.mp3');
+		playingaudio.play();
 	}
 	else if (i == 9) {
-		playingaudio = new Audio('sounds/dollars/1000.mp3').play();
+		playingaudio = new Audio('sounds/dollars/1000.mp3');
+		playingaudio.play();
 	}
 	else if (i == 22) {
-		playingaudio = new Audio('sounds/couch/reggienator.mp3').play();
-	}
-	else if (i == 21) {
-		playingaudio = new Audio('sounds/MEMES.mp3').play();
+		playingaudio = new Audio('sounds/couch/reggienator.mp3');
+		playingaudio.play();
 	}
 	else if (i == 23) {
-		playingaudio = new Audio('sounds/couch/spacetracks.mp3').play();
+		playingaudio = new Audio('sounds/couch/spacetracks.mp3');
+		playingaudio.play();
 	}
-
-
-
-
+	else if (i == 21) {
+		playingaudio = new Audio('sounds/MEMES.mp3');
+		playingaudio.play();
+	}
 }
 
 
